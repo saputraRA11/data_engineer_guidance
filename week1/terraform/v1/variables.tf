@@ -1,6 +1,6 @@
 variable "credantials" {
   description = "credentials name"
-  default = file("./keys/credentials.json")
+  default = "./keys/credentials.json"
 }
 variable "project" {
   description = "Project name"
