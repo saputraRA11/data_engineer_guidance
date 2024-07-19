@@ -1,0 +1,3 @@
+upload credentials into cloud with:
+
+scp -i ~/.ssh/gcp credentials.json <username>@<ip_cloud>:/home/<username>/.google
