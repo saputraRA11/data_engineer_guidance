@@ -1,0 +1,1 @@
+ssh-keygen -t rsa -f ~/.ssh/gcp -C saputra -b 2048
