@@ -1,0 +1,196 @@
+Question 1. Knowing docker tags
+
+    Run the command to get information on Docker
+
+    docker --help
+
+    Now run the command to get help on the "docker build" command:
+
+    docker build --help
+
+    Do the same for "docker run".
+
+    Which tag has the following text? - Automatically remove the container when it exits
+
+        --delete
+        --rc
+        --rmc
+        --rm
+
+Question 2. Understanding docker first run
+
+    Run docker with the python:3.9 image in an interactive mode and the entrypoint of bash. Now check the python modules that are installed ( use pip list ).
+
+    What is version of the package wheel ?
+
+        0.42.0
+        1.0.0
+        23.0.1
+        58.1.0
+
+Question 3. Count records
+
+    How many taxi trips were totally made on September 18th 2019?
+
+    Tip: started and finished on 2019-09-18.
+
+    Remember that lpep_pickup_datetime and lpep_dropoff_datetime columns are in the format timestamp (date and hour+min+sec) and not in date.
+
+        15767
+        15612
+        15859
+        89009
+
+Question 4. Longest trip for each day
+
+    Which was the pick up day with the longest trip distance? Use the pick up time for your calculations.
+
+    Tip: For every trip on a single day, we only care about the trip with the longest distance.
+
+        2019-09-18
+        2019-09-16
+        2019-09-26
+        2019-09-21
+
+Question 5. Three biggest pick up Boroughs
+
+    Consider lpep_pickup_datetime in '2019-09-18' and ignoring Borough has Unknown
+
+    Which were the 3 pick up Boroughs that had a sum of total_amount superior to 50000?
+
+        "Brooklyn" "Manhattan" "Queens"
+        "Bronx" "Brooklyn" "Manhattan"
+        "Bronx" "Manhattan" "Queens"
+        "Brooklyn" "Queens" "Staten Island"
+        
+Question 6. Largest tip
+
+    For the passengers picked up in September 2019 in the zone name Astoria which was the drop off zone that had the largest tip? We want the name of the zone, not the id.
+
+    Note: it's not a typo, it's tip , not trip
+
+        Central Park
+        Jamaica
+        JFK Airport
+        Long Island City/Queens Plaza
+
+Question 7. Knowing docker tags
+
+    Run the command to get information on Docker
+
+    docker --help
+
+    Now run the command to get help on the "docker build" command
+
+    Which tag has the following text? - Write the image ID to the file
+
+        --imageid string
+        --iidfile string
+        --idimage string
+        --idfile string
+
+Question 8. Understanding docker first run
+
+    Run docker with the python:3.9 image in an interactive mode and the entrypoint of bash. Now check the python modules that are installed ( use pip list). How many python packages/modules are installed?
+
+        1
+        6
+        3
+        7
+
+Question 9. Count records
+
+    How many taxi trips were totally made on January 15?
+
+    Tip: started and finished on 2019-01-15.
+
+    Remember that lpep_pickup_datetime and lpep_dropoff_datetime columns are in the format timestamp (date and hour+min+sec) and not in date.
+
+        20689
+        20530
+        17630
+        21090
+        
+Question 10. Largest trip for each day
+
+    Which was the day with the largest trip distance Use the pick up time for your calculations.
+
+        2019-01-18
+        2019-01-28
+        2019-01-15
+        2019-01-10
+
+Question 11. The number of passengers
+
+    In 2019-01-01 how many trips had 2 and 3 passengers?
+
+        2: 1282 ; 3: 266
+        2: 1532 ; 3: 126
+        2: 1282 ; 3: 254
+        2: 1282 ; 3: 274
+
+Question 12. Largest tip
+
+    For the passengers picked up in the Astoria Zone which was the drop off zone that had the largest tip? We want the name of the zone, not the id.
+
+    Note: it's not a typo, it's tip , not trip
+
+        Central Park
+        Jamaica
+        South Ozone Park
+        Long Island City/Queens Plaza
+
+Question 13. Google Cloud SDK
+
+    Install Google Cloud SDK. What's the version you have?
+
+    To get the version, run gcloud --version
+
+Question 14. Terraform
+
+    Now install terraform and go to the terraform directory (week_1_basics_n_setup/1_terraform_gcp/terraform)
+
+    After that, run
+
+        terraform init
+        terraform plan
+        terraform apply
+        
+    Apply the plan and copy the output (after running apply) to the form.
+
+    It should be the entire output - from the moment you typed terraform init to the very end.
+
+Question 15. Count records
+
+    How many taxi trips were there on January 15?
+
+    Consider only trips that started on January 15.
+
+Question 16. Largest tip for each day
+
+    Find the largest tip for each day. On which day it was the largest tip in January?
+
+    Use the pick up time for your calculations.
+
+    (note: it's not a typo, it's "tip", not "trip")
+
+Question 17. Most popular destination
+
+    What was the most popular destination for passengers picked up in central park on January 14?
+
+    Use the pick up time for your calculations.
+
+    Enter the zone name (not id). If the zone name is unknown (missing), write "Unknown"
+
+Question 18. Most expensive locations
+
+    What's the pickup-dropoff pair with the largest average price for a ride (calculated based on total_amount)?
+
+    Enter two zone names separated by a slash
+
+    For example:
+
+    "Jamaica Bay / Clinton East"
+
+    If any of the zone names are unknown (missing), write "Unknown". For example, "Unknown / Clinton East".
+
