@@ -31,3 +31,5 @@ function main(){
     newgrp docker;
     docker ps;
 }
+
+main
