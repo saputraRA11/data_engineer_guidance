@@ -9,6 +9,9 @@ services:
      - "./../data:/var/lib/postgresql/data:rw"
     ports:
       - "5429:5432"
+    container_name: pg-database
+    networks:
+      - data_engineer
   pgadmins:
     image: dpage/pgadmin4
     environment:
@@ -16,3 +19,11 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
       - "9001:80"
+    container_name: pg-admins
+    networks:
+      - data_engineer
+
+networks:
+  data_engineer:
+      external:
+        name: data_engineer

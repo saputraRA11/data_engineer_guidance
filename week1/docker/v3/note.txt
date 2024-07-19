@@ -15,7 +15,6 @@ create server files with python:
 
 python -m http.server
 
-
 dockerize script command:
 
 docker build -t taxi_ingest:v001 .
