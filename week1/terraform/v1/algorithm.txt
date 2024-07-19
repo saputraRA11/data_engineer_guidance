@@ -1,0 +1,11 @@
+1) setup iam gcp
+2) login in gcp with cli in command "gcloud auth application-default login"
+3) Execution steps
+    * terraform init:
+        Initializes & configures the backend, installs plugins/providers, & checks out an existing configuration from a version control
+    * terraform plan:
+        Matches/previews local changes against a remote state, and proposes an Execution Plan.
+    * terraform apply:
+        Asks for approval to the proposed plan, and applies changes to cloud
+    * terraform destroy
+        Removes your stack from the Cloud

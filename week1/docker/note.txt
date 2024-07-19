@@ -1,0 +1,3 @@
+v1 => intro
+v2 => installation and create pipeline
+v3 => dockerize ingesting data

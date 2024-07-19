@@ -1,0 +1,6 @@
+region = "us-central1"
+bq_dataset_name = "demo_dataset"
+gcs_bucket_name = "terra-bucket-v1"
+gcs_storage_class = "STANDARD"
+location = "US"
+project = "gold-bruin-429014-v5"

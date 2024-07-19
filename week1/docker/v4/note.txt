@@ -1,0 +1,19 @@
+docker compose:
+
+create docker container with docker compose. docker compose has file in yaml file.
+network in compose is single and default create random network name.
+
+you can give compose version but it depend on requirement.
+
+run with log:
+
+docker compose up
+
+run without log:
+
+docker compose up -d
+
+stop it:
+
+docker compose download
+

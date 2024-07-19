@@ -1,0 +1,31 @@
+docker run {option common}
+
+option common:
+-i => for stdin or input to tty/output.
+-t => tty or screen from entrypoint, return an output.
+
+entrypoint => default of command run. it is primary command in first running runtime.
+
+example of command default:
+1) bash
+2) python
+3) node
+
+example change command:
+
+# for running bash command to python images.
+docker run -it --entrypoint=bash python:3.9
+
+
+# for running python command to python images.
+docker run -it --entrypoint=python python:3.9
+
+RUN => execute a command.
+WORKDIR => change directory / cd command to some path.
+
+docker build {option common}
+option common:
+-t => for giving tag to a new images.
+
+Dockerfile => create a new image.
+

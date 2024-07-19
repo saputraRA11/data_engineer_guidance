@@ -1,0 +1,4 @@
+1) export jupyter to python
+2) make script ingestion
+3) make argumentation for script
+4) make functionality script
