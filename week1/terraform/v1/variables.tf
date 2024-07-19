@@ -1,3 +1,7 @@
+variable "credantials" {
+  description = "credentials name"
+  default = "./keys/credentials.json"
+}
 variable "project" {
   description = "Project name"
 }
