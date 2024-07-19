@@ -1,5 +1,5 @@
 function main(){
-    echo "========= install pyenv ==========="
+    echo "========= install pyenv ===========";
     curl https://pyenv.run | bash;
     sudo apt update;
     echo -e 'export PYENV_ROOT="$HOME/.pyenv"\nexport PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc;
@@ -7,7 +7,7 @@ function main(){
     exec "$SHELL";
     pyenv install -v 3.9;
 
-    echo "========= install terraform ==========="
+    echo "========= install terraform ===========";
     sudo apt-get update && sudo apt-get install -y gnupg software-properties-common;
     wget -O- https://apt.releases.hashicorp.com/gpg | \
     gpg --dearmor | \
@@ -18,7 +18,7 @@ function main(){
     sudo apt update;
     sudo apt-get install terraform;
 
-    echo "========= install docker ==========="
+    echo "========= install docker ===========";
     sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev;
     sudo apt install apt-transport-https ca-certificates curl software-properties-common;
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -;
