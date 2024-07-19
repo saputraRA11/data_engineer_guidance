@@ -4,7 +4,7 @@ function main(){
     sudo apt update;
     echo -e 'export PYENV_ROOT="$HOME/.pyenv"\nexport PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc;
     echo -e 'eval "$(pyenv init --path)"\neval "$(pyenv init -)"' >> ~/.bashrc;
-    exec "$SHELL"
+    exec "$SHELL";
     pyenv install -v 3.9;
 
     echo "========= install terraform ==========="
