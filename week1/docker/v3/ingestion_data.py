@@ -12,12 +12,18 @@ def main(params):
     database = params.database
     table = params.table
     url = params.url
+    filename = params.filename
+    genre = params.genre
+
+    if genre not in ["yellow","green"]:
+        print("Sorry genre doesn't exist now.")
+        return
 
     # create output of file
     if url.endswith('.csv.gz'):
-        csv_name = 'output.csv.gz'
+        csv_name = f'{filename}.csv.gz'
     else:
-        csv_name = 'output.csv'
+        csv_name = f'{filename}.csv'
 
     # download file
     os.system(f'wget {url} -O {csv_name}')
@@ -31,9 +37,7 @@ def main(params):
     # get new chunk data
     df = next(df_iter)
 
-    # transform data
-    df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
-    df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+    df = transform(df,genre)
 
     # create table
     df.head(0).to_sql(name=table,con=engine,if_exists='replace')
@@ -46,9 +50,8 @@ def main(params):
             df = next(df_iter)
 
             # transform data
-            df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
-            df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
-
+            df = transform(df,genre)
+            
             # insert data into database
             df.to_sql(name=table,con=engine,if_exists='append')
 
@@ -60,6 +63,17 @@ def main(params):
             print("Finish to ingesting data into postgres database")
             break
 
+def transform(df:pd.DataFrame,type:str = "yellow"):
+    # transform data
+    if type == 'yellow':
+        df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+        df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+    else:
+        df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
+        df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
+
+    return df
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Ingesting csv data into postgres")
 
@@ -70,6 +84,8 @@ if __name__ == '__main__':
     parser.add_argument('--database',required=True,help="database name of Postgres")
     parser.add_argument('--table',required=True,help="table name of Postgres")
     parser.add_argument('--url',required=True,help="url of csv file")
+    parser.add_argument('--filename',required=True,help="filename of csv file")
+    parser.add_argument('--genre',required=True,help="genre of csv file ('yellow','green')")
 
     args = parser.parse_args()
 
