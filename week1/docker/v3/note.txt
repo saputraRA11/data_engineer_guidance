@@ -28,4 +28,4 @@ docker run -it --network data_engineer taxi_ingest:v001 --user=saputra --passwor
 localhost url:
 
 URL="http://192.168.18.235:8000/output.csv.gz"
-docker run -it --network data_engineer taxi_ingest:v001 --user=saputra --password=indonesia11 --host=pg-database --port=5432 --database=taxi --table=docker_taxi_yellow_trips --url=${URL}
+docker run -it --network data_engineer taxi_ingest:v001 --user=saputra --password=indonesia11 --host=pg-database --port=5432 --database=taxi --table=docker_taxi_yellow_trips --url=${URL} --filename="yellow_taxi"
