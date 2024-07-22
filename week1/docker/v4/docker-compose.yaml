@@ -12,6 +12,11 @@ services:
     container_name: pg-database
     networks:
       - data_engineer
+<<<<<<< HEAD
+=======
+      - v3_default
+
+>>>>>>> week2-beta
   pgadmins:
     image: dpage/pgadmin4
     environment:
@@ -22,8 +27,18 @@ services:
     container_name: pg-admins
     networks:
       - data_engineer
+<<<<<<< HEAD
+=======
+      - v3_default
+>>>>>>> week2-beta
 
 networks:
   data_engineer:
       external:
         name: data_engineer
+<<<<<<< HEAD
+=======
+  v3_default:
+      external:
+        name: v3_default
+>>>>>>> week2-beta

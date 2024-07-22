@@ -1,0 +1,11 @@
+setup airflow.
+
+    1) mv ~/.google/credentials.json into ~/.google/credentials/google_credentials.json
+    2) curl -O https://raw.githubusercontent.com/DataTalksClub/data-engineering-zoomcamp/main/cohorts/2022/week_2_data_ingestion/airflow/docker-compose.yaml
+    3) mkdir -p ./dags ./logs ./plugins
+    4) echo -e "AIRFLOW_UID=$(id -u)" > .env
+    5) comment word "script" in dockerfile
+    5) change dockcer-compose.yaml to configure google env
+    5) docker build . 
+    6) docker compose up airflow-init
+    7) docker compose up -d

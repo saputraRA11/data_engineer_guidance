@@ -1,0 +1,7 @@
+how do i build/update workflow?
+
+1) mkdir -p ./parquet ./logs ./dags ./plugins
+2) docker compose build
+3) docker compose up airflow-init
+4) docker compose up -d 
+
