@@ -1,0 +1,4 @@
+sqlalchemy
+pandas
+psycopg[binary,pool]
+psycopg2-binary

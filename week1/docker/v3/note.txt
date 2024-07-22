@@ -1,0 +1,31 @@
+ingesting data:
+
+create pipeline from source to target some techinic like ingestion script using streaming with chunk data. 
+in ingesting data we use parameter to make dynamic pipeline for source and target.
+
+
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+python ingestion_data.py --user=saputra --password=indonesia11 --host=localhost --port=5430 --database=taxi --table=taxi_yellow_trips --url=${URL}
+
+dockerize script:
+
+make script to be image of docker and we can run image to ingesting.
+
+create server files with python:
+
+python -m http.server
+
+dockerize script command:
+
+docker build -t taxi_ingest:v001 .
+
+public url:
+
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+docker run -it --network data_engineer taxi_ingest:v001 --user=saputra --password=indonesia11 --host=pg-database --port=5432 --database=taxi --table=docker_taxi_yellow_trips --url=${URL}
+
+
+localhost url:
+
+URL="http://192.168.18.235:8000/output.csv.gz"
+docker run -it --network data_engineer taxi_ingest:v001 --user=saputra --password=indonesia11 --host=pg-database --port=5432 --database=taxi --table=docker_taxi_yellow_trips --url=${URL} --filename="yellow_taxi"

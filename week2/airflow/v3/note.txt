@@ -1,0 +1,6 @@
+this is ingesting of parquet file data to postgres
+
+important:
+
+1) airflow have state if job failed,please clear state.
+2) set start date and end date to make sure range of pipeline.

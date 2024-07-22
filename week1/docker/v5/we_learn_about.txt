@@ -1,0 +1,9 @@
+1) joining data (implicit inner join / without inner join).
+2) joining data (explicit inner join / with inner join).
+3) checking Location ID record of table in zones table.
+4) checking for Location IDs in zones tables not in yellow taxi table.
+5) Using Left,Right and Outer Joins when some Locations IDs are not in either.
+6) Using GROUP BY to calculate number of trip per day.
+7) USING ORDER BY to order the results of your query.
+8) Other kinds of aggregations.
+9) GROUPING by multiples fields.

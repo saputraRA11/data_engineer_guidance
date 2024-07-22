@@ -1,0 +1,55 @@
+# database
+
+docker run -it \
+    -e POSTGRES_USER="saputra" \ 
+    -e POSTGRES_PASSWORD="indonesia11" \ 
+    -e POSTGRES_DB="taxi" \ 
+    -v $(pwd)/v2/data:/var/lib/postgresql/data 
+    -p 5430:5432 
+    --network data_engineer
+    --name pg-database
+    postgres
+
+#on fish 
+docker run -it -e POSTGRES_USER="saputra" -e POSTGRES_PASSWORD="indonesia11" -e POSTGRES_DB="taxi" -v $(pwd)/../data:/var/lib/postgresql/data -p 5430:5432 --network=data_engineer --name pg-database postgres
+
+# database admin
+docker run -it \
+    -e PGADMIN_DEFAULT_EMAIL="admin@gmail.com"
+    -e PGADMIN_DEFAULT_PASSWORD="root"
+    -p 9000:80
+    --network data_engineer
+    --name pg_admin
+    dpage/pgadmin4
+
+# on fish
+docker run -it -e PGADMIN_DEFAULT_EMAIL="admin@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="root" -p 9000:80 --network=data_engineer --name pg_admin dpage/pgadmin4
+
+
+hapus container random name 
+
+docker rm $(docker ps -a | awk '{print $12}' | awk '(!/redis/)&&(!/postgres/)')
+
+hapus image random docker 
+
+docker rmi $(docker images -f "dangling=true" -q)
+
+buat connect db by cli
+
+pgcli -h 0.0.0.0 -p 5432 -u saputra -d taxi =P
+
+download csv 
+
+wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz 
+
+peek dataset
+
+less file_name
+
+copy 100 first data to new file
+
+head -n 100 v2/yellow_tripdata_2021-01.csv >> yellow_head.csv
+
+count total record of file
+
+wc -l v2/yellow_tripdata_2021

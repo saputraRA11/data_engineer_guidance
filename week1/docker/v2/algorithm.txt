@@ -1,0 +1,12 @@
+1) install postgres on docker
+2) install pgcli on pip
+7) install sqlalchemy on pip
+3) install jupyter notobook on pip
+4) download csv ny taxi
+5) explore data 
+6) make schema from csv to postgres
+8) transform data (make sure data type like schema type)
+9) make data to chunk for pipeline
+10) create schema && check schema on pgcli
+11) check speed of pipe
+12) make pipeline from csv to postgres

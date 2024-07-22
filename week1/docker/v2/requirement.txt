@@ -1,0 +1,7 @@
+jupyter
+sqlalchemy
+pgcli
+pandas
+jupyterlab-vim
+psycopg[binary,pool]
+psycopg2-binary

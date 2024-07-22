@@ -1,0 +1,23 @@
+what is data pipeline? 
+
+    * a bunch of paremter script in a job that takes one or more data sources.
+    * doing something with input of data sources.
+    * producing one or more new dataset as well.
+    * data workflow = data pipeline
+
+DAG 
+
+    * DAG = directed acyclic graph
+
+    * graph is job of workflow
+
+    * edges of graph is output of some product from job.
+
+    * directed means job depends on which one.
+
+    * acyclic means workflow has loop in job but this for some error in workflow (we can call this as rollback job)
+
+    * active workflow doesn't have loop and active workflow is cyclic for lifecycle (directed cyclic graph)
+
+    * DAG good for retrying workflow if there are some case to be retried.
+
