@@ -1,0 +1,3 @@
+how do i run workflow?
+
+1) python <workflow_filename_in_python>.py

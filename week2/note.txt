@@ -1,0 +1,5 @@
+Challange:
+
+1) modify airflow v2 to be parquet file and start date and end date follow jinja
+2) add conclusion for all workflow with running that
+3) deploy prefect from ETL gcs to ELT biquery with script v4 and v7

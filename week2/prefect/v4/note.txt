@@ -1,0 +1,8 @@
+ETL
+
+Source: Web
+Target: GCS
+
+Flow:
+
+Web - Local - GCS
