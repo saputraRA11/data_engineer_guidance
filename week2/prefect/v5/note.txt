@@ -1,0 +1,9 @@
+create deployment:
+    * prefect deployment build <file_python>:<function running main> -n "name of deployment"
+        * example:
+            * prefect deployment build ./main.py:main -n "Parameterized ETL Web To Gcs"
+
+deploy: 
+    * prefect deployment apply <name_file_deployment>.yaml
+        * example:
+            * prefect deployment apply main-deployment.yaml

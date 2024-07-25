@@ -1,0 +1,6 @@
+ELT
+
+Source: GCS
+Target: GoogleBigquery
+
+Google Cloud Storage - Local - Big Query

@@ -1,0 +1,8 @@
+ETL 
+
+Source: Google Cloud Storage
+Target: Big Query
+
+Flow:
+
+GCS - Local - Big Query

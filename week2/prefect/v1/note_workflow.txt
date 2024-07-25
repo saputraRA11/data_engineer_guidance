@@ -1,0 +1,19 @@
+what is workflow ochestration (product)?
+    * governing data flow in a way that respects ochestration rules and business logic.
+    * data flow is binding and disparating set of application together.
+    * data workflow is turning any code into a workflow that you can schedule,run and observe.
+
+some part of workflow ochestration:
+    1) workflow has source and target or source and new data from workflow.
+    2) workflow configuration is configure workflow like (env,time,etc).
+    3) workflow ochestration is running step 1 2 for restart or retries workflow.
+
+core features (feature product):
+    1) remote execution
+    2) scheduling
+    3) retries
+    4) caching
+    5) integration with external systems (APIs,databases)
+    6) Ad-hoc runs
+    7) Parameterization
+    8) Alert when something fails

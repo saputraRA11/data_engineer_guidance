@@ -1,0 +1,59 @@
+What is a Data lake (concept)?
+
+    * a central repository that holds big data from many sources.
+    * in general, data can be stored structured or semi-structured or unstructured.
+    * important concept is ingesting data ASAP and make it available or accessible to other teams.
+    * data lake can be used extensively for machine learning as well as analytical solutions.
+    * a solutions generally has to be secure and can scale up and also hardware should be inexpensive.
+    * size of data lake is more than and equal with terrabyte.
+
+    conclusion: data lake is optimization big data for resource,time,scalling and usability.
+
+Data Lake vs Data warehouse (concept)
+
+    * data lake:
+        1) in general, data lake contain unstructured data.
+        2) users is data scientist and analyst.
+        3) storing big data everyday.
+        4) usecase are basically stream processing,mechine learning and real-time analytics.
+    
+    * data warehouse:
+        1) in general, data warehouse contain structured data.
+        2) users is bisnis analyst
+        3) storing less data everyday.
+        4) usecase consist batch processing or bi reporting.
+
+How Did start Data Lake (concept)?
+
+    Idea of data lake is stored data ASAP and make it useful for teams and can be huge amount of revenue.
+    data lake usually storing data unstructured because it faster than structuring data.
+
+ETL vs ELT (Approach data)
+
+    * ETL (Export transform and load) and ELT (Export Load and transform).
+    * ETL is mainly used for datawarehouse solutions whereas ELT used for datalake solutions.
+
+    * ETL:
+     * schema on first, define schema first and write the data.
+     * e2e data warehouse
+
+    * ELT:
+     * schema on read, write data first and define schema on read.
+     * e2e data lake
+
+Gotcha of Data Lake (Never to do)(concept)
+    Data swamp is data dirty or unused in data lake.
+    - Characteristic of Data Swamp
+        Data Swamp:
+            * no versioing.
+            * incompatible schemas for same data without versioing.
+                example:
+                    today writing data using avro but tommorow writing using pq.
+            * data becomes useless.
+            * no metadata associated.
+            * there is no possibility to join different data.
+
+Cloud provider Data Lake (resource)
+    * GCP - cloud storage
+    * AWS - S3
+    * AZURE - AZURE BLOB
