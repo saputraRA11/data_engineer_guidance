@@ -1,0 +1,1 @@
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "gcs_to_bq"}, "timestamp": 1722156440, "user": null}
