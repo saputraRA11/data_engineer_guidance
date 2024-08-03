@@ -1,0 +1,26 @@
+How do i create deployment with schedule:
+
+    prefect deployment build ./main.py:main -n etlv1 --cron "0 0 * * *" -a
+
+image must be same as repo 
+https://stackoverflow.com/questions/41984399/docker-push-error-denied-requested-access-to-the-resource-is-denied
+
+create docker:image
+
+    docker image build -t rsaputra11/prefect:v1 .
+
+push image
+
+    docker image push rsaputra11/prefect:v1
+
+create block docker
+
+Block name: prefect-v1
+type: docker-container
+image: rsaputra11/prefect:v1
+pullPolicy: always
+auto remove: true
+
+start queue
+
+    prefect agent start -q default

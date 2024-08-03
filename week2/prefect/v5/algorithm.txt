@@ -1,0 +1,6 @@
+1) create script
+2) prefect deployment build ./main.py:main -n "Parameterized ETL Web To Gcs"
+3) set default Parameterized
+4) prefect deployment apply main-deployment.yaml
+5) prefect agent start --work-queue "default" -> start workflow in queue redis
+
