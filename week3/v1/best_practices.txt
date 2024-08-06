@@ -1,0 +1,27 @@
+Best practices query
+
+Cost reduction
+
+    * Avoid select with *
+    * price our queries before running them
+    * Use clustered or partitioned tables
+    * use streaming inserts with caution (streaming can increase cost drastically)
+    * materialize query result in stages (check query like a cte every location environments)
+
+Query performance
+
+    * filter on partitioned columns
+    * Denormalizing data
+    * use nested or repeated columns
+    * use external data sources appropriately
+    * reduce data before using a join 
+    * do not treat WITH clauses as prepared statements
+    * Avoid oversharding tables
+    more...
+    * Avoid javascript user-defined functions
+    * Use approximate aggregate function (HyperLogLog++)
+    * Order Last,for query operations to maximizes performance
+    * Optimize your join patterns
+    * As a best practices,
+    place the table with largest number of rows first,followed by table with 
+    the fewest rows, and then place the remaining tables by decreasing size.

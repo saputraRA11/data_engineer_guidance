@@ -1,0 +1,152 @@
+Index:
+
+    * OLAP vs OLTP
+    * What is data warehouse?
+    * BigQuery
+        * Cost
+        * Partitions and Clustering
+        * Best practices
+        * Internals
+        * ML in BQ
+
+OLAP VS OTLP
+
+OLTP (Online Transaction Processing) (kind of database: backend services) (backend):
+    * Purposes:
+            - Control and run essential business operations in real time
+            - can fall back and roll back in fails
+
+    * Data updates: 
+            - Short
+            - fast because initiated by user
+
+    * Database design:
+            - Normalized for efficiency
+
+    * Space requirements:
+            - Generally small if historical data is archived
+
+    * Backup and recovery:
+            - Regular backups required to:
+                1) ensure business continutiy.
+                2) meet legal.
+                3) governace requirements.
+    * Productivity:
+            - Increases Productivity of end users
+
+    * Data view:
+            - Multi-dimensional view of enterprise data
+
+    * User examples:
+            - Customer-facing personnel, clerks, online shoppers
+
+OLAP (Online Analytical Processing) (data engineer):
+    * Purposes : 
+            - Plan 
+            - Solve problems
+            - Support decisions
+            - discover hidden insights
+            - putting a lot of data and discovering insights used by data analyst and scientist
+    * Data updates:
+            - Data periodically refreshed with 
+                1) scheduled 
+                2) long-running batch jobs
+
+    * Database design:
+            - Denormalized for analyst
+
+    * Space requirements:
+            - Generally large due to aggregating large dataset
+
+    * Backup and recovery:
+            - Reloaded data as needed in regular backups from OLTP database if data lost
+
+    * Productivity:
+            - Increases Productivity of 
+                1) business managers
+                2) data analysts
+                3) executives
+    * Data view:
+            - Lists day-to-day business transactions
+    
+    * User examples:
+            - knowledge workers such as:
+                1) business analysts
+                2) data analysts
+                3) executives
+
+What is a data warehouse?
+
+    * OLAP solution.
+    * used for reporting and data analysts.
+    * data sources is operational system and flat files.
+    * reading data in staging area.
+    * generally data warehouse consists summary data, meta data and raw data can accessed directly.
+    * result transformed of data warehouse is data marts
+    * for data analyst using data marts as interface would be ideal situation.
+    * data scientist directly reading raw data from data warehouse.
+
+BigQuery
+
+    * serverless data warehouse (no install).
+    * infrastructure including scalability and high-availability.
+    * features like mechine learning, geospatial analysis and business intelligence.
+    * maximizes flexibility by seperating the compute engine analyzes your data from Google Cloud storage.
+    * can cached query, visualization query.
+    * cost is $5 each 1 TB data Processing.
+    * Flat rate pricing 100 slots -> $2.000/month = 400TB
+    * BigQuery can Partitions when we query.
+    * BigQuery also can Clustering when we query.
+
+Partitioning
+
+    * data processing is small because partition by a column.
+    * when we query by partition column,we just search by a part of partition,that is reason to make searching faster.
+    * data type can be partitioned:
+        1) time-unit column
+        2) ingestion time (_partitiontime)
+        3) integer range partitioning
+        4) time unit or ingestion time such as daily (default), hourly, monthly or yearly
+        5) number of partitions limit is 4000
+
+Clustering:
+
+    * Columns you specify are used to colocate related data
+    * order of the column is important
+    * the order of the specified columns determines the sort order of data.
+    * we can specify up to four clustering columns
+    * Clustering columns must be top-level, non-repeated columns (values examples: ID or unique value)
+    * we can choose data type below:
+        1) Date
+        2) Bool
+        3) Geography
+        4) Int64
+        5) Numeric
+        6) Bignumeric
+        7) String
+        8) Timestamp
+        9) Datetime
+
+    -- important note
+    * clustering improves:
+        1) filter queries
+        2) aggregate queries
+    * table with data size < 1 GB, don't show significant imporvement with Partitioning and clustering
+
+Clustering over partiioning
+
+    * Partitioning results in 
+        1) a small amount of data per patition (approximately less than 1 GB)
+        2) a large number of partitions beyond the limits on partitioned tables
+        3) our mutation operations modifying the majority of partitions in the table frequently (example, every few minutes)
+
+Automatic re-clustering
+
+    * as data is added to a clustered table
+        1) new data can be written to blocks that contain key ranges 
+           that overlaps with the key ranges in previously written blocks.
+        2) These overlapping keys weaken the sort property of table.
+    
+    * maintain performance characteristics of a clustered table
+        1) Automatic re-clustering in background to restore the sort property of table.
+        2) in partition tables, clustering is maintained for data within the scope of each partition.
