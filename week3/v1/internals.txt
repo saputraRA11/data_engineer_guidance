@@ -1,0 +1,27 @@
+biguery internal seperate in:
+    borg (server) inside of this:
+        1) cli
+        2) dremel (query execution/compute query)
+            query divide in tree structures.
+        3) jupyter (communicate between dremel and colussus)
+            network has speed 1 TB/seconds.
+        4) colossus (storage of biguery) 
+            storage is very cheap and columnar format
+
+record/row-oriented vs column-oriented
+
+    row-oriented:
+        * this example is csv
+        * easy to process and understand data
+    
+    column-oriented:
+        * this example is bigquery
+        * easy to aggregating data
+        * avoid query all column in one time
+
+how dremel actualy work:
+    *) dremel is query processing in bigquery
+    *) data processing in tree structures for divide query into smaller chunks to colossus.
+    *) aggregating is fast because query divide into smaller chunks.
+    
+    
