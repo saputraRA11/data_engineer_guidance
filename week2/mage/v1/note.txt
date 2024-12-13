@@ -1,0 +1,51 @@
+Architecture:
+
+    * Extract:
+        pull data from a source (API - NYC taxi dataset).
+    * transform:
+        data cleaning, transformation and partitioning.
+    * Load:
+        Api -> mage, mage -> (postgres, GCS, Bigquery).
+
+What is Ochestration:
+
+    * A large part of data engineering is extracting, transforming and loading data between sources.
+    * Ochestration is a process of depedency management, facilitated through automation.
+    * the data ochestrator manages scheduling,monitoring,triggering even resource allocation.
+
+more about ochestration:
+
+    * every workflow requires sequentials steps.
+    * Steps = tasks = blocks
+    * workflow = DAGs(Directed acyclic graphs) = pipeline
+    * good ochestration is good data engineering lifecycle because ochestration is a key of entire process in data engineering.
+
+A good ochestration:
+    * workflow management.
+        1) define schedule.
+        2) manage workflow efficiently.
+        3) ensure task are executed in right order.
+        4) manage depedency.
+    * automation (automated ochestration solution).
+    * Error handling (good conditional logic branching).
+    * recovery (recover lost data in ochestration solution).
+    * monitoring, alerting (ochestration can retry and notify if some error occurs).
+    * resource optimization (ochestration managing jobs are executed in optimizing the best route for that execution).
+    * observability
+    * debugging
+    * compliance/auditing
+
+A good ochestrator prioritize:
+    * Flow state (feeling flow):
+        "I need to switch between 7 tools/services".
+        (if you constanly needing to swith tools,you dont have a very good flow).
+    * Feedback Loops:
+        "I spent 5 hours locally testing this DAG".
+        (the ability to iterate quickly to fail fast to build really cool stuff and get tangible feedback).
+    * Cognitive Load:
+        "How much do you need to know to do your job?"
+        not good in tools.
+        
+
+conclution :
+    An ochestrator is good using tools and manage all jobs like ochestrator musician.
